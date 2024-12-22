@@ -1,0 +1,117 @@
+Laravel Website Project Creation for WBB
+Project Setup
+Create Project Folder:
+
+Create a folder named internship and open it in VS Code.
+Open the terminal and navigate to the folder:
+sh
+Copy code
+cd F:\internship
+Create Laravel Project:
+
+Run the following command to create a new Laravel project:
+sh
+Copy code
+composer create-project --prefer-dist laravel/laravel wbb_website "10.*"
+Navigate to the newly created project directory:
+sh
+Copy code
+cd wbb_website
+Database Setup
+Install XAMPP:
+
+Download and install XAMPP if you haven't already.
+Start Apache & MySQL:
+
+Open XAMPP Control Panel and start the Apache and MySQL services.
+Create Database:
+
+Open your browser and go to phpMyAdmin.
+Create a new database.
+Configure Database in Laravel:
+
+Open the .env file in your project.
+Update the database settings as follows:
+makefile
+Copy code
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=wbb_db  # Replace with your database name
+DB_USERNAME=root
+DB_PASSWORD=         # Leave empty if you didn't set a MySQL password
+Run Migrations:
+
+In the terminal, run the following command to create the necessary database tables:
+sh
+Copy code
+php artisan migrate
+Admin Panel Setup
+Install Voyager:
+
+Install Voyager, a Laravel admin package, by running:
+sh
+Copy code
+composer require tcg/voyager
+Publish Voyager Assets:
+
+Publish Voyager's assets and configurations by running:
+sh
+Copy code
+php artisan voyager:install
+Create Admin User:
+
+Create an admin user with the following command:
+sh
+Copy code
+php artisan voyager:admin your-email@example.com --create
+php artisan voyager:admin admin@gmail.com --create
+
+php artisan voyager:admin admin@gmail.com --create
+Follow the prompts to set an admin name and password.
+Verify Installation:
+
+Open composer.json and ensure Voyager is listed under require:
+json
+Copy code
+"require": {
+    "tcg/voyager": "^1.7"
+}
+Autoload Composer:
+
+Run the following command to refresh Composer's autoload files:
+sh
+Copy code
+composer dump-autoload
+Access the Admin Panel
+Start Laravel Development Server:
+
+Run the server using:
+sh
+Copy code
+php artisan serve
+Access Admin Panel:
+
+Open your browser and go to http://127.0.0.1:8000/admin or http://localhost:8000/admin.
+Log in using the email and password you provided when creating the admin user.
+Publish Voyager Assets:
+
+If needed, publish Voyager's assets, configuration, and database migrations by running:
+sh
+Copy code
+php artisan vendor:publish --provider="TCG\Voyager\VoyagerServiceProvider"
+Data Migration
+Migrate data between databases and the application using:
+sh
+Copy code
+php artisan migrate
+Develop the Website and Admin Panel
+Start building and customizing your website and admin panel according to your project requirements.
+
+
+problems and solutions:
+
+1. for voyager admin not showing profile picture
+
+go to env and change APP_URL=http://localhost to  APP_URL=http://127.0.0.1:8000
+

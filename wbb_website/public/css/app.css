@@ -1,0 +1,241 @@
+/* General Styling */
+.header-container {
+    background-color: #ffffff; /* White background for the header */
+    padding: 10px 20px; /* Spacing around the header content */
+    border-bottom: 2px solid #e0e0e0; /* Subtle border at the bottom of the header */
+    font-family: Arial, sans-serif; /* Default font for the header */
+}
+
+/* Logo and Title */
+.logo-container {
+    display: flex; /* Arrange logo and title side by side */
+    align-items: center; /* Vertically align items in the container */
+    gap: 15px; /* Space between the logo and the title */
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.site-title {
+    display: flex; /* Arrange the logo and title in a row */
+    align-items: center; /* Vertically align items in the container */
+    gap: 15px; /* Space between the logo and the title */
+}
+
+.logo-container img {
+    width: 300px; /* Width of the logo image */
+    height: 100px; /* Maintain aspect ratio */
+}
+
+.site-title h1 {
+    font-size: 1.4em; /* Font size for the title */
+    margin: 0; /* Remove default margin */
+    color: #333; /* Dark gray color for the title */
+    font-weight: bold; /* Bold text for the title */
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Hotline */
+.hotline-container {
+    text-align: center; /* Center-align the hotline button */
+    margin-left: auto; /* Push the hotline to the right */
+}
+
+.hotline-button {
+    background-color: #4c00cc; /* Purple background for the button */
+    color: #ffffff; /* White text */
+    padding: 5px 10px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-weight: bold; /* Bold text */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Navigation Bar */
+.nav-bar {
+    display: flex; /* Arrange items in a row */
+    justify-content: space-between; /* Space out navigation and other elements */
+    align-items: center; /* Vertically center items */
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 10px 20px; /* Spacing around the navigation bar */
+    border-top: 1px solid #e0e0e0; /* Subtle top border */
+}
+
+.navigation ul {
+    list-style: none; /* Remove default bullet points */
+    display: flex; /* Arrange navigation items in a row */
+    gap: 20px; /* Space between navigation items */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navigation a {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Dark gray text */
+    font-weight: bold; /* Bold text */
+}
+
+.navigation a:hover {
+    color: #4c00cc; /* Change text color to purple on hover */
+}
+
+/* Language Switcher */
+.language-switcher {
+    display: flex; /* Arrange language buttons side by side */
+    gap: 10px; /* Space between language buttons */
+}
+
+.language-button {
+    background-color: #ffd700; /* Yellow background for the buttons */
+    border: none; /* Remove border */
+    padding: 5px 10px; /* Padding inside the buttons */
+    font-weight: bold; /* Bold text */
+    border-radius: 3px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.language-button:hover {
+    background-color: #e6b800; /* Darker yellow on hover */
+}
+
+/* Job Button */
+.job-container {
+    margin-left: 15px; /* Add spacing on the left */
+}
+
+.job-button {
+    background-color: #4c00cc; /* Purple background for the button */
+    color: #ffffff; /* White text */
+    padding: 5px 10px; /* Padding inside the button */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Address */
+.address {
+    font-size: 0.9em; /* Smaller font size */
+    color: #555; /* Medium gray color */
+    margin-left: auto; /* Push the address to the right */
+}
+
+/* Help Section */
+.help-section {
+    position: absolute; /* Absolute positioning */
+    top: 10px; /* Position from the top */
+    right: 20px; /* Position from the right */
+}
+
+.help-section a {
+    color: #4c00cc; /* Purple text */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+}
+
+.help-section a:hover {
+    color: #37009d; /* Darker purple on hover */
+}
+
+/* Footer */
+.footer-container {
+    background-color: #2e2e2e; /* Dark gray background */
+    padding: 40px 20px; /* Spacing inside the footer */
+    color: #fff; /* White text */
+}
+
+.footer-inner {
+    display: flex; /* Arrange footer content in a row */
+    justify-content: space-between; /* Space out columns */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    max-width: 1200px; /* Maximum width for the content */
+    margin: 0 auto; /* Center-align content */
+}
+
+.footer-column {
+    flex: 1; /* Equal column width */
+    min-width: 200px; /* Minimum width for columns */
+    margin-bottom: 20px; /* Spacing between rows */
+}
+
+.footer-column h4 {
+    font-size: 18px; /* Font size for column titles */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 15px; /* Spacing below title */
+}
+
+.footer-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.footer-links li {
+    margin-bottom: 8px; /* Space between links */
+}
+
+.footer-links li a {
+    color: #ddd; /* Light gray text */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-links li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.footer-office-social {
+    display: flex; /* Arrange items side by side */
+    justify-content: space-between; /* Space out social icons and office info */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    margin-top: 20px; /* Space above */
+}
+
+.office-info-container {
+    display: flex; /* Arrange office info in a column */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.social-media-icons a i {
+    font-size: 28px; /* Icon size */
+    color: #ddd; /* Light gray color */
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-media-icons a:hover i {
+    color: #ffcc00; /* Yellow color on hover */
+}
+
+.footer-bottom {
+    text-align: center; /* Center-align the footer bottom content */
+    border-top: 1px solid #444; /* Darker top border */
+    padding-top: 15px; /* Space above the footer bottom */
+    margin-top: 20px; /* Space above the border */
+    font-size: 14px; /* Smaller font size */
+    color: #aaa; /* Light gray color */
+}
+
+.footer-inner {
+    display: flex; /* Arrange content side by side */
+    justify-content: space-between; /* Space out columns */
+}
+
+.footer-column {
+    flex: 1; /* Equal column width */
+    margin: 0 20px; /* Space between columns */
+}
+
+.office-info-container .map-container {
+    margin-bottom: 15px; /* Space below the map */
+}
+
+.office-info-container .office-address {
+    margin-top: 15px; /* Space above the address */
+}
+
+/* Center social media icons */
+.social-media-icons.centered {
+    text-align: center; /* Center-align icons */
+    margin: 20px 0; /* Vertical spacing */
+}
+
+.social-media-icons.centered a {
+    margin: 0 10px; /* Space between icons */
+    font-size: 1.5em; /* Adjust icon size */
+}
