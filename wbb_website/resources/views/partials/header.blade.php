@@ -1,71 +1,75 @@
-<header class="header-container">
-    <div class="header-top">
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="{{ Voyager::image(setting('site.logo')) }}" alt="Site Logo">
-        </div>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ setting('site.title', 'Default Title') }}</title>
 
-        <!-- Title -->
-        <div class="site-title">
-            <h1>{{ Voyager::setting('site.title', 'Default Title') }}</h1> <!-- 'Default Title' is a fallback if not set -->
-        </div>
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="{{ asset('js/app.js') }}"></script>
+    </head>
+    <body>
+        <header class="header-container">
+            <div class="header-top">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <img src="{{ Voyager::image(setting('site.logo')) }}" alt="Site Logo">
+                </div>
 
-        <!-- Hotline -->
-        <div class="hotline-container">
-            <a href="Hotline:{{ setting('header.hotline', '1924') }}" class="hotline-button">
-                Hotline: {{ setting('header.hotline', '1924') }}
-            </a>
-        </div>
-    </div>
+                <!-- Title -->
+                <div class="site-title">
+                    <h1>{{ setting('site.title', 'Default Title') }}</h1>
+                </div>
 
-    
-    <!-- Navigation Bar -->
-    <div class="nav-bar">
-        <nav class="navigation">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/media">Media</a></li>
-                <li><a href="/publication">Publication</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-                <li><a href="/download">Download</a></li>
-                <li><a href="/public-issues">Public Issues</a></li>
-            </ul>
-        </nav>
-
-       
-
-        <!-- Job Button -->
-        <div class="job-container">
-            <a href="{{ setting('header.Careers') }}" class="job-button" download>Careers</a>
-        </div>
-
-         <!-- Language Switcher -->
-         <div class="language-switcher">
-            @php
-                $languages = setting('header.languages');
-                $languagesArray = json_decode($languages, true);
-            @endphp
-
-            @if(is_array($languagesArray))
-                @foreach ($languagesArray as $language)
-                    <a href="{{ $language['url'] }}">
-                        <button class="language-button">{{ $language['name'] }}</button>
+                <!-- Hotline and Help Section -->
+                <div class="hotline-help-container">
+                    <div class="help-section">
+                        <a href="/help"><i class="fa fa-phone"></i> Need help?</a>
+                    </div>
+                    <a href="tel:{{ setting('header.hotline', '1924') }}" class="hotline-button">
+                        Hotline: {{ setting('header.hotline', '1924') }}
                     </a>
-                @endforeach
-            @else
-                <button class="language-button">No languages available</button>
-            @endif
-        </div>
+                </div>
+            </div>
 
-        <!-- Address -->
-        <div class="address">
-            <span>J.R. Jayawardena Centre, Town Hall</span>
-        </div>
-    </div>
+            <!-- Navigation -->
+            <div class="nav-bar">
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        @foreach (\App\Models\Page::all() as $page)
+                            <li><a href="{{ url($page->slug) }}">{{ $page->title }}</a></li>
+                        @endforeach
+                    </ul>
 
-    <!-- Help Section -->
-    <div class="help-section">
-        <a href="/help"><i class="fa fa-phone"></i> Need help?</a>
-    </div>
-</header>
+                    <!-- Careers and Languages Inline -->
+                    <div class="nav-extras">
+                        <a href="{{ setting('header.careers') }}" class="job-button">Careers</a>
+                        <div class="language-switcher">
+                            @php
+                                $languages = setting('header.languages');
+                                $languagesArray = json_decode($languages, true);
+                            @endphp
+
+                            @if(is_array($languagesArray))
+                                @foreach ($languagesArray as $language)
+                                    <a href="{{ $language['url'] }}">
+                                        <button class="language-button">{{ $language['name'] }}</button>
+                                    </a>
+                                @endforeach
+                            @else
+                                <button class="language-button">No languages available</button>
+                            @endif
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Address -->
+            <div class="address">
+                <h2>{{ setting('header.address', 'J R Jayawardena Centre, Town Hall') }}</h2>
+            </div>
+        </header>
+    </body>
+</html>

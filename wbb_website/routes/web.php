@@ -1,23 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
+use App\Models\Page;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
+// Static Home Page Route
 Route::get('/', function () {
-    return view('layout.welcome');
-});
+    return view('home'); // Serve the static home page
+})->name('home');
 
-
+// Voyager Admin Routes
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+});
+
+// Dynamic Pages Route
+Route::get('/{slug}', function ($slug) {
+    $page = Page::where('slug', $slug)->firstOrFail();
+    return view('page', ['page' => $page]);
 });

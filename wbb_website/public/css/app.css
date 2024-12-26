@@ -1,95 +1,151 @@
-/* General Styling */
+/* Header Container */
 .header-container {
-    background-color: #ffffff; /* White background for the header */
-    padding: 10px 20px; /* Spacing around the header content */
-    border-bottom: 2px solid #e0e0e0; /* Subtle border at the bottom of the header */
-    font-family: Arial, sans-serif; /* Default font for the header */
+    background-color: #ffffff; /* White background */
+    padding: 20px; /* Space around the header */
+    border-bottom: 2px solid #e0e0e0; /* Light gray border below */
+    font-family: Arial, sans-serif; /* Default font */
 }
 
-/* Logo and Title */
+/* Header Top */
+.header-top {
+    display: flex; /* Enable flexbox for layout */
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    margin-bottom: 10px; /* Space below the header */
+}
+
+/* Logo */
 .logo-container {
-    display: flex; /* Arrange logo and title side by side */
-    align-items: center; /* Vertically align items in the container */
-    gap: 15px; /* Space between the logo and the title */
-    flex-grow: 1;
-    justify-content: center;
-}
-
-.site-title {
-    display: flex; /* Arrange the logo and title in a row */
-    align-items: center; /* Vertically align items in the container */
-    gap: 15px; /* Space between the logo and the title */
+    flex: 1; /* Allow the logo to adjust its size proportionally */
+    max-width: 300px; /* Limit the maximum width */
 }
 
 .logo-container img {
-    width: 300px; /* Width of the logo image */
-    height: 100px; /* Maintain aspect ratio */
+    width: 100%; /* Ensure the logo scales down proportionally */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Site Title */
+.site-title {
+    flex: 2; /* Adjust space proportionally for the title */
+    text-align: center; /* Center the title */
 }
 
 .site-title h1 {
-    font-size: 1.4em; /* Font size for the title */
-    margin: 0; /* Remove default margin */
-    color: #333; /* Dark gray color for the title */
-    font-weight: bold; /* Bold text for the title */
-    text-align: center;
-    flex-grow: 1;
+    font-size: 1.5rem; /* Set a responsive font size */
+    color: #333; /* Dark gray color */
+    font-weight: bold; /* Bold text */
+    margin: 0; /* Remove default margins */
 }
 
-/* Hotline */
-.hotline-container {
-    text-align: center; /* Center-align the hotline button */
-    margin-left: auto; /* Push the hotline to the right */
+/* Hotline and Help Section */
+.hotline-help-container {
+    flex: 1; /* Allow it to resize proportionally */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Align items to the right */
+    text-align: right; /* Align text to the right */
 }
 
 .hotline-button {
-    background-color: #4c00cc; /* Purple background for the button */
+    background-color: #4c00cc; /* Purple background */
     color: #ffffff; /* White text */
-    padding: 5px 10px; /* Padding inside the button */
-    border-radius: 5px; /* Rounded corners for the button */
-    font-weight: bold; /* Bold text */
+    padding: 8px 16px; /* Add spacing inside the button */
+    border-radius: 5px; /* Rounded corners */
     text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 5px; /* Add spacing below the button */
+    text-align: center; /* Center the text */
+}
+
+.hotline-button:hover {
+    background-color: #37009d; /* Darker purple on hover */
+}
+
+.help-section a {
+    color: #4c00cc; /* Purple text */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    display: block; /* Make it a block-level element */
+}
+
+.help-section a:hover {
+    color: #37009d; /* Darker purple on hover */
 }
 
 /* Navigation Bar */
 .nav-bar {
-    display: flex; /* Arrange items in a row */
-    justify-content: space-between; /* Space out navigation and other elements */
-    align-items: center; /* Vertically center items */
     background-color: #f9f9f9; /* Light gray background */
-    padding: 10px 20px; /* Spacing around the navigation bar */
-    border-top: 1px solid #e0e0e0; /* Subtle top border */
+    padding: 10px 0; /* Add vertical padding */
+    border-top: 1px solid #e0e0e0; /* Light gray border */
+}
+
+.navigation {
+    display: flex; /* Enable flexbox */
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center-align items */
+    gap: 20px; /* Add spacing between items */
 }
 
 .navigation ul {
-    list-style: none; /* Remove default bullet points */
-    display: flex; /* Arrange navigation items in a row */
-    gap: 20px; /* Space between navigation items */
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Display items in a row */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px; /* Space between items */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
 }
 
 .navigation a {
     text-decoration: none; /* Remove underline */
-    color: #333; /* Dark gray text */
+    color: #0a0000; /* Black text */
     font-weight: bold; /* Bold text */
+    padding: 5px 10px; /* Add spacing around the text */
+    border-radius: 5px; /* Add rounded corners */
 }
 
 .navigation a:hover {
-    color: #4c00cc; /* Change text color to purple on hover */
+    background-color: #4c00cc; /* Purple background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Navigation Extras */
+.nav-extras {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Align items vertically */
+    gap: 15px; /* Space between items */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Job Button */
+.job-button {
+    background-color: #916bd1; /* Purple background */
+    color: #ffffff; /* White text */
+    padding: 8px 16px; /* Add spacing inside the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center the text */
+}
+
+.job-button:hover {
+    background-color: #37009d; /* Darker purple on hover */
 }
 
 /* Language Switcher */
 .language-switcher {
-    display: flex; /* Arrange language buttons side by side */
-    gap: 10px; /* Space between language buttons */
+    display: flex; /* Enable flexbox */
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 10px; /* Add space between buttons */
 }
 
 .language-button {
-    background-color: #ffd700; /* Yellow background for the buttons */
+    background-color: #ffd700; /* Yellow background */
     border: none; /* Remove border */
-    padding: 5px 10px; /* Padding inside the buttons */
+    padding: 8px 16px; /* Add padding inside the button */
     font-weight: bold; /* Bold text */
-    border-radius: 3px; /* Slightly rounded corners */
+    border-radius: 3px; /* Rounded corners */
     cursor: pointer; /* Pointer cursor on hover */
 }
 
@@ -97,145 +153,177 @@
     background-color: #e6b800; /* Darker yellow on hover */
 }
 
-/* Job Button */
-.job-container {
-    margin-left: 15px; /* Add spacing on the left */
-}
-
-.job-button {
-    background-color: #4c00cc; /* Purple background for the button */
-    color: #ffffff; /* White text */
-    padding: 5px 10px; /* Padding inside the button */
-    border-radius: 5px; /* Rounded corners */
-    font-weight: bold; /* Bold text */
-    text-decoration: none; /* Remove underline */
-}
-
 /* Address */
 .address {
-    font-size: 0.9em; /* Smaller font size */
-    color: #555; /* Medium gray color */
-    margin-left: auto; /* Push the address to the right */
+    text-align: center; /* Center-align the address */
+    font-size: 0.9rem; /* Set a smaller font size */
+    color: #555; /* Gray text */
+    margin-top: 10px; /* Add spacing above */
 }
 
-/* Help Section */
-.help-section {
-    position: absolute; /* Absolute positioning */
-    top: 10px; /* Position from the top */
-    right: 20px; /* Position from the right */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center-align items */
+        text-align: center; /* Center-align text */
+    }
+
+    .hotline-help-container {
+        align-items: center; /* Center-align items */
+        margin-top: 10px; /* Add spacing above */
+    }
+
+    .site-title {
+        margin-top: 10px; /* Add spacing above */
+    }
+
+    .navigation ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        gap: 10px; /* Add spacing between items */
+    }
+
+    .nav-extras {
+        flex-direction: column; /* Stack items vertically */
+        gap: 10px; /* Add spacing between items */
+    }
 }
 
-.help-section a {
-    color: #4c00cc; /* Purple text */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-}
-
-.help-section a:hover {
-    color: #37009d; /* Darker purple on hover */
-}
-
-/* Footer */
+/* General Footer Styling */
 .footer-container {
     background-color: #2e2e2e; /* Dark gray background */
     padding: 40px 20px; /* Spacing inside the footer */
     color: #fff; /* White text */
+    font-family: Arial, sans-serif; /* Consistent font */
 }
 
 .footer-inner {
-    display: flex; /* Arrange footer content in a row */
-    justify-content: space-between; /* Space out columns */
+    display: flex; /* Arrange footer columns in a row */
+    justify-content: space-between; /* Evenly space out columns */
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px; /* Add space between columns */
     max-width: 1200px; /* Maximum width for the content */
-    margin: 0 auto; /* Center-align content */
+    margin: 0 auto; /* Center-align the content */
 }
 
 .footer-column {
-    flex: 1; /* Equal column width */
+    flex: 1; /* Equal width for all columns */
     min-width: 200px; /* Minimum width for columns */
     margin-bottom: 20px; /* Spacing between rows */
 }
 
+
 .footer-column h4 {
-    font-size: 18px; /* Font size for column titles */
-    font-weight: bold; /* Bold text */
-    margin-bottom: 15px; /* Spacing below title */
+    font-size: 18px; /* Column title size */
+    font-weight: bold; /* Bold text for titles */
+    margin-bottom: 15px; /* Space below title */
+    color: #f1f1f1; /* Light gray color for titles */
 }
 
+/* Quick Links */
 .footer-links {
     list-style: none; /* Remove bullet points */
     padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
 }
 
 .footer-links li {
     margin-bottom: 8px; /* Space between links */
 }
 
-.footer-links li a {
-    color: #ddd; /* Light gray text */
+.footer-links a {
+    color: #ddd; /* Light gray links */
     text-decoration: none; /* Remove underline */
 }
 
-.footer-links li a:hover {
+.footer-links a:hover {
     text-decoration: underline; /* Underline on hover */
+    color: #fff; /* White on hover */
 }
 
-.footer-office-social {
-    display: flex; /* Arrange items side by side */
-    justify-content: space-between; /* Space out social icons and office info */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    margin-top: 20px; /* Space above */
+/* Social Media Links */
+.social-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Arrange icons in a row */
+    gap: 15px; /* Space between icons */
 }
 
-.office-info-container {
-    display: flex; /* Arrange office info in a column */
-    flex-direction: column; /* Stack items vertically */
+.social-links li img {
+    width: 24px; /* Icon size */
+    height: 24px;
+    display: inline-block; /* Align properly */
 }
 
-.social-media-icons a i {
-    font-size: 28px; /* Icon size */
-    color: #ddd; /* Light gray color */
-    margin: 0 10px; /* Space between icons */
+.social-links li a:hover img {
+    filter: brightness(1.2); /* Brighten icons on hover */
 }
 
-.social-media-icons a:hover i {
-    color: #ffcc00; /* Yellow color on hover */
+/* Address Column */
+.footer-column p {
+    line-height: 1.6; /* Better readability */
+    font-size: 14px; /* Font size for address */
+    color: #ccc; /* Light gray color */
 }
 
+/* Office Location */
+.map-container iframe {
+    width: 100%; /* Full width of the container */
+    height: 150px; /* Fixed height */
+    border: none; /* Remove iframe border */
+    margin-top: 15px; /* Space above iframe */
+}
+
+/* Footer Help Section */
+.footer-column img {
+    max-width: 100%; /* Responsive image */
+    height: auto;
+    margin-top: 20px; /* Space above image */
+}
+
+.footer-column img:hover {
+    filter: brightness(1.1); /* Brighten on hover */
+}
+
+/* Footer Bottom Section */
 .footer-bottom {
-    text-align: center; /* Center-align the footer bottom content */
-    border-top: 1px solid #444; /* Darker top border */
-    padding-top: 15px; /* Space above the footer bottom */
+    text-align: center; /* Center-align text */
+    border-top: 1px solid #444; /* Dark border above */
+    padding-top: 15px; /* Space above */
     margin-top: 20px; /* Space above the border */
     font-size: 14px; /* Smaller font size */
     color: #aaa; /* Light gray color */
 }
 
-.footer-inner {
-    display: flex; /* Arrange content side by side */
-    justify-content: space-between; /* Space out columns */
+.footer-bottom p {
+    margin: 5px 0; /* Vertical spacing between lines */
+    line-height: 1.5; /* Line spacing */
 }
 
-.footer-column {
-    flex: 1; /* Equal column width */
-    margin: 0 20px; /* Space between columns */
+.footer-bottom p a {
+    color: #ddd; /* Light gray for links */
+    text-decoration: none; /* No underline */
 }
 
-.office-info-container .map-container {
-    margin-bottom: 15px; /* Space below the map */
+.footer-bottom p a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #fff; /* White on hover */
 }
 
-.office-info-container .office-address {
-    margin-top: 15px; /* Space above the address */
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-inner {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center-align content */
+    }
 
-/* Center social media icons */
-.social-media-icons.centered {
-    text-align: center; /* Center-align icons */
-    margin: 20px 0; /* Vertical spacing */
-}
+    .footer-column {
+        margin-bottom: 30px; /* Increase spacing for stacked columns */
+        text-align: center; /* Center-align text for smaller screens */
+    }
 
-.social-media-icons.centered a {
-    margin: 0 10px; /* Space between icons */
-    font-size: 1.5em; /* Adjust icon size */
+    .social-links {
+        justify-content: center; /* Center-align icons */
+    }
 }
